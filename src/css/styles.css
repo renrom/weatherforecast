@@ -27,19 +27,35 @@ p {
 	border: 2px solid #0e242c;
 	background-color: var(--main-theme-color);
 	border-radius: 10px;
-	padding: 10px;
+	padding: 10px 10px 20px 10px;
+	
 	text-align: center;
 	width: 300px;
 	
 
 }
 
-.city {
-	background-color: var(--main-theme-color);
+.headerweather {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
 	color: var(--main-font-color);
-	font-size: 2rem;
+	background-color: var(--main-theme-color);
 	padding-bottom: 50px;
 }
+
+.city {
+	font-size: 1.5rem;
+	background-color: var(--main-theme-color);
+	color: var(--main-font-color);
+}
+
+.windarrow {
+	color: var(--main-font-color);
+	font-size: 1.3rem;
+	background-color: var(--main-theme-color);
+ }
 
 .temp {
 	background-color: var(--main-theme-color);
@@ -71,7 +87,8 @@ p {
 }
 
 #location {
-	height: 30px;
+	border:1px solid #031a2b;
+	height: 20px;
 	font-size: 0.8rem;
 	padding: 0px 0px 0 5px;
 	width: 100px;
@@ -82,3 +99,6 @@ p {
 	font-size: 0.8rem;
 }
 
+#location:focus {
+	outline: none;
+}
