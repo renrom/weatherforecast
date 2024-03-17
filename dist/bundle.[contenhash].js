@@ -22,10 +22,73 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `html,
-body {
+body,
+p {
 	margin: 0;
 	padding: 0;
-}`, "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;;CAEC,SAAS;CACT,UAAU;AACX","sourcesContent":["html,\nbody {\n\tmargin: 0;\n\tpadding: 0;\n}"],"sourceRoot":""}]);
+	font-family: "Cantarell", sans-serif;
+	background-color: #77C3EC;
+	color: white;
+}
+
+.header {
+	text-align: center;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+
+}
+
+.weathercontainer {
+	border: 2px solid #B8E2F2;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	width: 550px;
+	box-shadow: 0px 10px 10px #0086E9;
+
+}
+
+.city {
+	font-size: 3rem;
+	padding-bottom: 50px;
+}
+
+.temp {
+	font-size: 4rem;
+	padding-bottom: 50px;
+}
+
+.searchbar {
+	display: flex;
+	justify-content: flex-start;
+	gap: 5px;
+	align-items: center;
+	font-size: 1rem;
+
+}
+
+.btnsearch {
+	background-color: #0086E9;
+	border: 1px solid #01111d;
+	border-radius: 15px;
+	text-decoration: none;
+	color: white;
+	width: 60px;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+}
+
+#location {
+	height: 30px;
+	padding: 0px 0px 0 5px;
+}
+
+#locationlabel {
+	width: 200px;
+}`, "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;;;CAGC,SAAS;CACT,UAAU;CACV,oCAAoC;CACpC,yBAAyB;CACzB,YAAY;AACb;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,aAAa;CACb,uBAAuB;;AAExB;;AAEA;CACC,yBAAyB;CACzB,mBAAmB;CACnB,aAAa;CACb,kBAAkB;CAClB,YAAY;CACZ,iCAAiC;;AAElC;;AAEA;CACC,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,QAAQ;CACR,mBAAmB;CACnB,eAAe;;AAEhB;;AAEA;CACC,yBAAyB;CACzB,yBAAyB;CACzB,mBAAmB;CACnB,qBAAqB;CACrB,YAAY;CACZ,WAAW;CACX,0BAA0B;CAC1B,eAAe;AAChB;;AAEA;CACC,YAAY;CACZ,sBAAsB;AACvB;;AAEA;CACC,YAAY;AACb","sourcesContent":["html,\nbody,\np {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: \"Cantarell\", sans-serif;\n\tbackground-color: #77C3EC;\n\tcolor: white;\n}\n\n.header {\n\ttext-align: center;\n}\n\n.main {\n\tdisplay: flex;\n\tjustify-content: center;\n\n}\n\n.weathercontainer {\n\tborder: 2px solid #B8E2F2;\n\tborder-radius: 10px;\n\tpadding: 20px;\n\ttext-align: center;\n\twidth: 550px;\n\tbox-shadow: 0px 10px 10px #0086E9;\n\n}\n\n.city {\n\tfont-size: 3rem;\n\tpadding-bottom: 50px;\n}\n\n.temp {\n\tfont-size: 4rem;\n\tpadding-bottom: 50px;\n}\n\n.searchbar {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\tgap: 5px;\n\talign-items: center;\n\tfont-size: 1rem;\n\n}\n\n.btnsearch {\n\tbackground-color: #0086E9;\n\tborder: 1px solid #01111d;\n\tborder-radius: 15px;\n\ttext-decoration: none;\n\tcolor: white;\n\twidth: 60px;\n\tpadding: 5px 10px 5px 10px;\n\tcursor: pointer;\n}\n\n#location {\n\theight: 30px;\n\tpadding: 0px 0px 0 5px;\n}\n\n#locationlabel {\n\twidth: 200px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -558,26 +621,70 @@ __webpack_require__.r(__webpack_exports__);
 
 const apiKey = "4c50907eb53d47b5a2c142345241503"
 const baseUrl = "https://api.weatherapi.com/v1/current.json"
+const defaultCity = 'Nieuwegein'
+const tempIndicator = 'c'
+
+const searchLocation = document.querySelector('.btnsearch')
+
+getWeather(defaultCity).then((toDayWeather) => {
+    showResult(toDayWeather)
+    });
 
 
-const loc = document.getElementById('location');
-
-loc.addEventListener("blur", function () {
-    location = loc.value;
+searchLocation.addEventListener("click", () => {
+    const location = document.getElementById("location").value
     console.log(location);
     getWeather(location).then((toDayWeather) => {
-        console.log(toDayWeather)
+        showResult(toDayWeather)
     });
+
 })
+
+function showResult(toDayWeather) {
+
+    const city = document.querySelector('.city')
+    const temp = document.querySelector('.temp')
+
+    const country = toDayWeather[0].country
+    const localtime = toDayWeather[0].localtime
+    const name = toDayWeather[0].name
+    const region = toDayWeather[0].region
+    const textWeather = toDayWeather[1].condition.text
+    const iconWeather = "https:"+toDayWeather[1].condition.icon
+    const tempFeelsCelcius = toDayWeather[1].feelslike_c
+    const tempFeelFahrenheit = toDayWeather[1].feelslike_f
+    const tempCelcius = toDayWeather[1].temp_c
+    const tempFahrenheit = toDayWeather[1].temp_f
+    const humidity = toDayWeather[1].humidity
+    const winddirection = toDayWeather[1].wind_dir
+
+    city.textContent = name;
+
+    if (tempIndicator === 'c') {
+        temp.textContent = tempCelcius + " °C";
+    } else {
+        temp.textContent = tempFahrenheit + "°F";
+    }
+
+
+
+}
 
 async function getWeather(location) {
 
     try {
     const forecast = await fetch(baseUrl+"?key="+apiKey+"&q="+location, {mode: 'cors'})
+
+    if (!forecast.ok) {
+
+        console.log('Sorry there was an error')
+        return 
+    }
+    
     const forecastResult = await forecast.json();
-    return forecastResult
+    return Object.values(forecastResult)
     } catch (error) {
-        console.log("Uh Oh "+error)
+        alert("Uh Oh "+error)
     }
 }
 

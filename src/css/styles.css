@@ -17,12 +17,14 @@ p {
 	justify-content: center;
 
 }
+
 .weathercontainer {
 	border: 2px solid #B8E2F2;
 	border-radius: 10px;
 	padding: 20px;
 	text-align: center;
-	width: 450px;
+	width: 550px;
+	box-shadow: 0px 10px 10px #0086E9;
 
 }
 
@@ -31,29 +33,34 @@ p {
 	padding-bottom: 50px;
 }
 
-.temp { 
+.temp {
 	font-size: 4rem;
 	padding-bottom: 50px;
 }
+
 .searchbar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
+	gap: 5px;
+	align-items: center;
 	font-size: 1rem;
 
 }
 
 .btnsearch {
 	background-color: #0086E9;
-	border: 2 solid #015c9c;;
-	border-radius: 6%;
+	border: 1px solid #01111d;
+	border-radius: 15px;
 	text-decoration: none;
 	color: white;
 	width: 60px;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
 }
 
-
-.location {
-	width: 10px;
+#location {
+	height: 30px;
+	padding: 0px 0px 0 5px;
 }
 
 #locationlabel {
