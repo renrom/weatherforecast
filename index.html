@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="René Romijn">
     <title>
-        Weather Forecast
+        Weather
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,14 +24,18 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="header">Weather Forecast</p>
+            <h1 class="header">Weather</p>
                 <div class="main">
 
                     <div class="weathercontainer">
-                        <p class="city"></p>
+                        <div class="headerweather">
+                            <img id="iconcurrentweather" src="" alt="">
+                            <p class="city"></p>
+                        </div>
+
                         <p class="temp"></p>
                         <div class="searchbar">
-                            <label id="locationlabel" for="location">Enter your location:</label>
+                            <label id="locationlabel" for="location">Enter location:</label>
                             <input type="text" id="location" name="location">
                             <div class="btnsearch">Search</div>
                         </div>

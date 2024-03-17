@@ -21,14 +21,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `html,
+___CSS_LOADER_EXPORT___.push([module.id, `:root {
+	--main-theme-color: #5cb8e9;
+	--main-font-color: white;
+}
+
+html,
 body,
 p {
 	margin: 0;
 	padding: 0;
 	font-family: "Cantarell", sans-serif;
-	background-color: #77C3EC;
-	color: white;
+	background-color: #daeaf3;
+	color: rgb(8, 7, 87);
 }
 
 .header {
@@ -42,27 +47,33 @@ p {
 }
 
 .weathercontainer {
-	border: 2px solid #B8E2F2;
+	border: 2px solid #0e242c;
+	background-color: var(--main-theme-color);
 	border-radius: 10px;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
-	width: 550px;
-	box-shadow: 0px 10px 10px #0086E9;
+	width: 300px;
+	
 
 }
 
 .city {
-	font-size: 3rem;
+	background-color: var(--main-theme-color);
+	color: var(--main-font-color);
+	font-size: 2rem;
 	padding-bottom: 50px;
 }
 
 .temp {
-	font-size: 4rem;
+	background-color: var(--main-theme-color);
+	color: var(--main-font-color);
+	font-size: 3rem;
 	padding-bottom: 50px;
 }
 
 .searchbar {
 	display: flex;
+	color: var(--main-font-color);
 	justify-content: flex-start;
 	gap: 5px;
 	align-items: center;
@@ -75,20 +86,26 @@ p {
 	border: 1px solid #01111d;
 	border-radius: 15px;
 	text-decoration: none;
-	color: white;
+	color: var(--main-font-color);
 	width: 60px;
 	padding: 5px 10px 5px 10px;
 	cursor: pointer;
+	font-size: 0.8rem;
 }
 
 #location {
 	height: 30px;
+	font-size: 0.8rem;
 	padding: 0px 0px 0 5px;
+	width: 100px;
 }
 
 #locationlabel {
-	width: 200px;
-}`, "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;;;CAGC,SAAS;CACT,UAAU;CACV,oCAAoC;CACpC,yBAAyB;CACzB,YAAY;AACb;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,aAAa;CACb,uBAAuB;;AAExB;;AAEA;CACC,yBAAyB;CACzB,mBAAmB;CACnB,aAAa;CACb,kBAAkB;CAClB,YAAY;CACZ,iCAAiC;;AAElC;;AAEA;CACC,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,QAAQ;CACR,mBAAmB;CACnB,eAAe;;AAEhB;;AAEA;CACC,yBAAyB;CACzB,yBAAyB;CACzB,mBAAmB;CACnB,qBAAqB;CACrB,YAAY;CACZ,WAAW;CACX,0BAA0B;CAC1B,eAAe;AAChB;;AAEA;CACC,YAAY;CACZ,sBAAsB;AACvB;;AAEA;CACC,YAAY;AACb","sourcesContent":["html,\nbody,\np {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: \"Cantarell\", sans-serif;\n\tbackground-color: #77C3EC;\n\tcolor: white;\n}\n\n.header {\n\ttext-align: center;\n}\n\n.main {\n\tdisplay: flex;\n\tjustify-content: center;\n\n}\n\n.weathercontainer {\n\tborder: 2px solid #B8E2F2;\n\tborder-radius: 10px;\n\tpadding: 20px;\n\ttext-align: center;\n\twidth: 550px;\n\tbox-shadow: 0px 10px 10px #0086E9;\n\n}\n\n.city {\n\tfont-size: 3rem;\n\tpadding-bottom: 50px;\n}\n\n.temp {\n\tfont-size: 4rem;\n\tpadding-bottom: 50px;\n}\n\n.searchbar {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\tgap: 5px;\n\talign-items: center;\n\tfont-size: 1rem;\n\n}\n\n.btnsearch {\n\tbackground-color: #0086E9;\n\tborder: 1px solid #01111d;\n\tborder-radius: 15px;\n\ttext-decoration: none;\n\tcolor: white;\n\twidth: 60px;\n\tpadding: 5px 10px 5px 10px;\n\tcursor: pointer;\n}\n\n#location {\n\theight: 30px;\n\tpadding: 0px 0px 0 5px;\n}\n\n#locationlabel {\n\twidth: 200px;\n}"],"sourceRoot":""}]);
+	color: var(--main-font-color);
+	font-size: 0.8rem;
+}
+
+`, "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;CACC,2BAA2B;CAC3B,wBAAwB;AACzB;;AAEA;;;CAGC,SAAS;CACT,UAAU;CACV,oCAAoC;CACpC,yBAAyB;CACzB,oBAAoB;AACrB;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,aAAa;CACb,uBAAuB;;AAExB;;AAEA;CACC,yBAAyB;CACzB,yCAAyC;CACzC,mBAAmB;CACnB,aAAa;CACb,kBAAkB;CAClB,YAAY;;;AAGb;;AAEA;CACC,yCAAyC;CACzC,6BAA6B;CAC7B,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,yCAAyC;CACzC,6BAA6B;CAC7B,eAAe;CACf,oBAAoB;AACrB;;AAEA;CACC,aAAa;CACb,6BAA6B;CAC7B,2BAA2B;CAC3B,QAAQ;CACR,mBAAmB;CACnB,eAAe;;AAEhB;;AAEA;CACC,yBAAyB;CACzB,yBAAyB;CACzB,mBAAmB;CACnB,qBAAqB;CACrB,6BAA6B;CAC7B,WAAW;CACX,0BAA0B;CAC1B,eAAe;CACf,iBAAiB;AAClB;;AAEA;CACC,YAAY;CACZ,iBAAiB;CACjB,sBAAsB;CACtB,YAAY;AACb;;AAEA;CACC,6BAA6B;CAC7B,iBAAiB;AAClB","sourcesContent":[":root {\n\t--main-theme-color: #5cb8e9;\n\t--main-font-color: white;\n}\n\nhtml,\nbody,\np {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: \"Cantarell\", sans-serif;\n\tbackground-color: #daeaf3;\n\tcolor: rgb(8, 7, 87);\n}\n\n.header {\n\ttext-align: center;\n}\n\n.main {\n\tdisplay: flex;\n\tjustify-content: center;\n\n}\n\n.weathercontainer {\n\tborder: 2px solid #0e242c;\n\tbackground-color: var(--main-theme-color);\n\tborder-radius: 10px;\n\tpadding: 10px;\n\ttext-align: center;\n\twidth: 300px;\n\t\n\n}\n\n.city {\n\tbackground-color: var(--main-theme-color);\n\tcolor: var(--main-font-color);\n\tfont-size: 2rem;\n\tpadding-bottom: 50px;\n}\n\n.temp {\n\tbackground-color: var(--main-theme-color);\n\tcolor: var(--main-font-color);\n\tfont-size: 3rem;\n\tpadding-bottom: 50px;\n}\n\n.searchbar {\n\tdisplay: flex;\n\tcolor: var(--main-font-color);\n\tjustify-content: flex-start;\n\tgap: 5px;\n\talign-items: center;\n\tfont-size: 1rem;\n\n}\n\n.btnsearch {\n\tbackground-color: #0086E9;\n\tborder: 1px solid #01111d;\n\tborder-radius: 15px;\n\ttext-decoration: none;\n\tcolor: var(--main-font-color);\n\twidth: 60px;\n\tpadding: 5px 10px 5px 10px;\n\tcursor: pointer;\n\tfont-size: 0.8rem;\n}\n\n#location {\n\theight: 30px;\n\tfont-size: 0.8rem;\n\tpadding: 0px 0px 0 5px;\n\twidth: 100px;\n}\n\n#locationlabel {\n\tcolor: var(--main-font-color);\n\tfont-size: 0.8rem;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -644,6 +661,7 @@ function showResult(toDayWeather) {
 
     const city = document.querySelector('.city')
     const temp = document.querySelector('.temp')
+    const imgCurrent = document.getElementById('iconcurrentweather')
 
     const country = toDayWeather[0].country
     const localtime = toDayWeather[0].localtime
@@ -665,7 +683,7 @@ function showResult(toDayWeather) {
     } else {
         temp.textContent = tempFahrenheit + "°F";
     }
-
+    imgCurrent.src = iconWeather;
 
 
 }
