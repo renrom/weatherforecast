@@ -555,8 +555,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/styles.css */ "./src/css/styles.css");
 
 
-const test = "fdf"
 
+const apiKey = "4c50907eb53d47b5a2c142345241503"
+const baseUrl = "https://api.weatherapi.com/v1/current.json"
+
+
+const loc = document.getElementById('location');
+
+loc.addEventListener("blur", function () {
+    location = loc.value;
+    console.log(location);
+    getWeather(location).then((toDayWeather) => {
+        console.log(toDayWeather)
+    });
+})
+
+async function getWeather(location) {
+
+    try {
+    const forecast = await fetch(baseUrl+"?key="+apiKey+"&q="+location, {mode: 'cors'})
+    const forecastResult = await forecast.json();
+    return forecastResult
+    } catch (error) {
+        console.log("Uh Oh "+error)
+    }
+}
 
 
 })();
