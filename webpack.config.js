@@ -25,7 +25,7 @@ module.exports = {
   devtool: 'source-map',
 
   plugins: [new HtmlWebpackPlugin({
-    title: 'Weather Forecast',
+    title: 'Weather',
     template: './src/index.html',
     filename: 'index.html',
 

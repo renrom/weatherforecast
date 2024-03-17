@@ -1,11 +1,16 @@
+:root {
+	--main-theme-color: #5cb8e9;
+	--main-font-color: white;
+}
+
 html,
 body,
 p {
 	margin: 0;
 	padding: 0;
 	font-family: "Cantarell", sans-serif;
-	background-color: #77C3EC;
-	color: white;
+	background-color: #daeaf3;
+	color: rgb(8, 7, 87);
 }
 
 .header {
@@ -19,27 +24,33 @@ p {
 }
 
 .weathercontainer {
-	border: 2px solid #B8E2F2;
+	border: 2px solid #0e242c;
+	background-color: var(--main-theme-color);
 	border-radius: 10px;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
-	width: 550px;
-	box-shadow: 0px 10px 10px #0086E9;
+	width: 300px;
+	
 
 }
 
 .city {
-	font-size: 3rem;
+	background-color: var(--main-theme-color);
+	color: var(--main-font-color);
+	font-size: 2rem;
 	padding-bottom: 50px;
 }
 
 .temp {
-	font-size: 4rem;
+	background-color: var(--main-theme-color);
+	color: var(--main-font-color);
+	font-size: 3rem;
 	padding-bottom: 50px;
 }
 
 .searchbar {
 	display: flex;
+	color: var(--main-font-color);
 	justify-content: flex-start;
 	gap: 5px;
 	align-items: center;
@@ -52,17 +63,22 @@ p {
 	border: 1px solid #01111d;
 	border-radius: 15px;
 	text-decoration: none;
-	color: white;
+	color: var(--main-font-color);
 	width: 60px;
 	padding: 5px 10px 5px 10px;
 	cursor: pointer;
+	font-size: 0.8rem;
 }
 
 #location {
 	height: 30px;
+	font-size: 0.8rem;
 	padding: 0px 0px 0 5px;
+	width: 100px;
 }
 
 #locationlabel {
-	width: 200px;
+	color: var(--main-font-color);
+	font-size: 0.8rem;
 }
+

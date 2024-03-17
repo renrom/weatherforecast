@@ -26,6 +26,7 @@ function showResult(toDayWeather) {
 
     const city = document.querySelector('.city')
     const temp = document.querySelector('.temp')
+    const imgCurrent = document.getElementById('iconcurrentweather')
 
     const country = toDayWeather[0].country
     const localtime = toDayWeather[0].localtime
@@ -47,7 +48,7 @@ function showResult(toDayWeather) {
     } else {
         temp.textContent = tempFahrenheit + "°F";
     }
-
+    imgCurrent.src = iconWeather;
 
 
 }
