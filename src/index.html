@@ -22,9 +22,10 @@
 </head>
 
 <body>
+    <img src="" alt="" class="backdrop">
     <div class="container">
         <div class="header">
-            <h1 class="header">Weather</p>
+            <h1 class="header">Current Weather</p>
                 <div class="main">
 
                     <div class="weathercontainer">
@@ -32,13 +33,23 @@
                             <p class="windarrow"></p>
                             <p class="city"></p>
                             <img id="iconcurrentweather" src="" alt="">
-                            
+
                         </div>
 
                         <p class="temp"></p>
+                        <div class="infotext">
+                            <div class="rowinfotext">
+                                <div class="infotextlabel">Humidity:</div>
+                                <div class="humidity"></div>
+                            </div>                            
+                            <div class="rowinfotext">
+                                <div class="infotextlabel">Last updated: </div>
+                                <div class="lastupdated"></div>
+                            </div>
+                        </div>
                         <div class="searchbar">
                             <label id="locationlabel" for="location">Enter location:</label>
-                            <input type="text" id="location" name="location">
+                            <input onfocus="this.value=''" type="text" id="location" name="location">
                             <div class="btnsearch">Search</div>
                         </div>
                     </div>

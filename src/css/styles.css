@@ -13,6 +13,12 @@ p {
 	color: rgb(8, 7, 87);
 }
 
+body {
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
 .header {
 	text-align: center;
 }
@@ -42,7 +48,7 @@ p {
 	
 	color: var(--main-font-color);
 	background-color: var(--main-theme-color);
-	padding-bottom: 50px;
+	padding-bottom: 10px;
 }
 
 .city {
@@ -53,15 +59,16 @@ p {
 
 .windarrow {
 	color: var(--main-font-color);
-	font-size: 1.3rem;
+	font-size: 1rem;
 	background-color: var(--main-theme-color);
+	
  }
 
 .temp {
 	background-color: var(--main-theme-color);
 	color: var(--main-font-color);
 	font-size: 3rem;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 .searchbar {
@@ -71,17 +78,18 @@ p {
 	gap: 5px;
 	align-items: center;
 	font-size: 1rem;
+	margin-top: 30px;
 
 }
 
 .btnsearch {
 	background-color: #0086E9;
 	border: 1px solid #01111d;
-	border-radius: 15px;
+	border-radius: 5px;
 	text-decoration: none;
 	color: var(--main-font-color);
 	width: 60px;
-	padding: 5px 10px 5px 10px;
+	padding: 2px 5px 2px 5px;
 	cursor: pointer;
 	font-size: 0.8rem;
 }
@@ -101,4 +109,24 @@ p {
 
 #location:focus {
 	outline: none;
+}
+
+.rowinfotext {
+	display: flex;
+	justify-content: start;
+	gap: 10px;
+
+
+}
+.rowinfotext,
+.infotextlabel {
+	background-color: var(--main-theme-color);
+	font-size: 1rem;
+	color: var(--main-font-color);
+}
+
+.infotextlabel {
+	text-align: start;
+	width: 120px;
+	
 }

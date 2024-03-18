@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
 
   performance: {
     maxAssetSize: 500000,
@@ -17,12 +17,12 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: '[name].[contenhash].js',
+    filename: '[name].[hash].js',
     clean: true,
     assetModuleFilename: '[name][ext]'
   },
 
-  devtool: 'source-map',
+  //devtool: 'source-map',
 
   plugins: [new HtmlWebpackPlugin({
     title: 'Weather',
