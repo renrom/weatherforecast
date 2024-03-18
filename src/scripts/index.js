@@ -38,6 +38,7 @@ function showResult(toDayWeather) {
 
     const city = document.querySelector('.city')
     const temp = document.querySelector('.temp')
+    const current = document.querySelector('.current')
     const imgCurrent = document.getElementById('iconcurrentweather')
     const lastUpdated = toDayWeather[1].last_updated;
     const country = toDayWeather[0].country
@@ -63,14 +64,23 @@ function showResult(toDayWeather) {
         setBackground(partCloudBackdrop)
     }
 
-        if (codeWeather === 1009 || codeWeather === 1006) {
+    if (codeWeather >= 1150 & codeWeather <= 1201) {
+        setBackground(rainBackdrop)
+    }
+
+    if (codeWeather === 1006 || codeWeather === 1009) {
         setBackground(cloudBackdrop)
+    }
+
+    if (codeWeather >= 1210 & codeWeather <= 1225) {
+        setBackground(snowBackdrop)
     }
 
     console.log(toDayWeather[0]);
     console.log(toDayWeather[1]);
 
     city.textContent = name;
+    current.textContent = textWeather;
 
     if (tempIndicator === 'c') {
         temp.textContent = tempCelcius + " °C";
@@ -126,7 +136,7 @@ function showResult(toDayWeather) {
 
 }
 
-function setBackground(background){
+function setBackground(background) {
     const backdrop = document.querySelector('body');
     backdrop.style.backgroundImage = 'url(' + background + ')';
     return
