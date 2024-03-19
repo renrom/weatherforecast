@@ -130,3 +130,70 @@ body {
 	width: 120px;
 	
 }
+
+.button{
+    background-color: #d2d2d2;
+    width: 200px;
+    height: 100px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.button::before{
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+.measurewrapper {
+	background-color: var(--main-theme-color);
+	display: flex;
+	justify-content:flex-end;
+	align-items: center;
+	gap: 5px;
+	margin-top: 30px;
+}
+
+#measure {
+	display: none;
+	
+}
+
+.lblmeasure {
+	text-align: left;
+	background-color: white;
+	width: 50px;
+	height: 20px;
+	border-radius: 50px;
+	transition: 0.2s;
+	cursor: pointer;
+	position: relative;
+}
+
+.lblmeasure::before {
+	position: absolute;
+	content: '';
+	background-color: #0086e9;
+	width: 20px;
+	height: 15px;
+	margin: 2px;
+	border: 1px solid darkblue;
+	transition: 0.2s;
+	border-radius: 50px;
+}
+
+
+#measure:checked + .lblmeasure::before {
+	transform: translateX(25px)
+}
+
+.measuretext {
+	font-size: 1rem;
+	color: var(--main-font-color);
+}
