@@ -52,19 +52,21 @@ body {
 }
 
 .city {
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	background-color: var(--main-theme-color);
 	color: var(--main-font-color);
 }
 
-.windarrow {
+.windarrow, 
+.windarrowmph {
 	color: var(--main-font-color);
 	font-size: 1rem;
 	background-color: var(--main-theme-color);
 	
  }
 
-.temp {
+.temp,
+.tempF {
 	background-color: var(--main-theme-color);
 	color: var(--main-font-color);
 	font-size: 3rem;
@@ -151,7 +153,8 @@ body {
     transition: 0.2s;
 }
 
-.measurewrapper {
+.measurewrapper,
+.tempwrapper {
 	background-color: var(--main-theme-color);
 	display: flex;
 	justify-content:flex-end;
@@ -160,7 +163,8 @@ body {
 	margin-top: 30px;
 }
 
-#measure {
+#measure,
+#tempchoose {
 	display: none;
 	
 }
@@ -168,6 +172,8 @@ body {
 .lblmeasure {
 	text-align: left;
 	background-color: white;
+	
+	border: 1px solid darkblue;
 	width: 50px;
 	height: 20px;
 	border-radius: 50px;
@@ -193,7 +199,19 @@ body {
 	transform: translateX(25px)
 }
 
-.measuretext {
+#tempchoose:checked + .lblmeasure::before {
+	transform: translateX(25px)
+}
+
+
+.measuretext,
+.temptext {
 	font-size: 1rem;
 	color: var(--main-font-color);
+}
+
+.togglerow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

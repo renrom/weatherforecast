@@ -31,10 +31,15 @@
                     <div class="weathercontainer">
                         <div class="headerweather">
                             <p class="windarrow"></p>
-                            <p class="city"></p>
+                            <p class="windarrowmph"></p>
+
                             <img id="iconcurrentweather" src="" alt="">
                         </div>
+                        <div class="citycontainer">
+                            <p class="city"></p>
+                        </div>
                         <p class="temp"></p>
+                        <p class="tempF"></p>
                         <div class="infotext">
                             <div class="rowinfotext">
                                 <div class="infotextlabel">Humidity:</div>
@@ -55,12 +60,21 @@
                             <input onfocus="this.value=''" type="text" id="location" name="location">
                             <div class="btnsearch">Search</div>
                         </div>
-                        <div class="measurewrapper">
-                            <span class="measuretext">km/h</span>
-                            <input type="checkbox" id="measure">
-                            <label for="measure" class="lblmeasure"></label>
-                            <span class="measuretext">mph</span>
-
+                        <div class="togglerow">
+                            <div class="tempwrapper">
+                                <span class="temptext">°C</span>
+                                <input type="checkbox" id="tempchoose">
+                                <label for="tempchoose" class="lblmeasure"></label>
+                                <span class="temptext">°F</span>
+                            </div>
+                            <div class="measurewrapper">
+                                <span class="measuretext">km/h</span>
+                                <input type="checkbox" id="measure">
+                                <label for="measure" class="lblmeasure"></label>
+                                <span class="measuretext">mph</span>
+    
+                            </div>
+    
                         </div>
                     </div>
                     
